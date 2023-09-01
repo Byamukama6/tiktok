@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CineverseHD</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to CineverseHD</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Video Feed -->
+        <section id="video-feed">
+            <!-- Video Cards go here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 CineverseHD</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+// app.js
+document.addEventListener("DOMContentLoaded", function () {
+    // Simulated video data
+    const videos = [
+        { title: "Video 1", url: "video1.mp4" },
+        { title: "Video 2", url: "video2.mp4" },
+        // Add more video data here
+    ];
+
+    const videoFeed = document.getElementById("video-feed");
+
+    // Display videos in the feed
+    videos.forEach((video) => {
+        const videoCard = document.createElement("div");
+        videoCard.classList.add("video-card");
+        videoCard.innerHTML = `
+            <video controls>
+                <source src="${video.url}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2>${video.title}</h2>
+        `;
+        videoFeed.appendChild(videoCard);
+    });
+});
